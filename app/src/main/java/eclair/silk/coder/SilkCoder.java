@@ -1,5 +1,7 @@
 package eclair.silk.coder;
 
+import java.net.URL;
+
 public class SilkCoder {
     static native void decode(String source, String dest, int fs_Hz, int loss);
 
@@ -8,7 +10,7 @@ public class SilkCoder {
     }
 
 
-    public static native void encode(String source,
+    private static native void encode(String source,
                                      String dest,
                                      boolean tencent,
                                      int fs_Hz,

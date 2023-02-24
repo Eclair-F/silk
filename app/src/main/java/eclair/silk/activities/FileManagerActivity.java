@@ -1,5 +1,7 @@
 package eclair.silk.activities;
 
+import static eclair.silk.utils.ResourceUtils.getText;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -131,7 +133,7 @@ public class FileManagerActivity extends BaseActivity {
             getPermission(new Permission(SharedVariables.getPermissions()[0]));
 
         }
-        FileUriUtils.startForRoot(activity,11);
+        FileUriUtils.startForRoot(activity, 11);
         setTitle(currentFile.getAbsolutePath());
     }
 
@@ -722,6 +724,7 @@ public class FileManagerActivity extends BaseActivity {
             case FILE_ACTION_TO_SILK:
                 if (!item.isBacker()) {
                     FileOperationsDialogs.showToSilkDialog(context, item, () -> initFiles(currentFile));
+                    Toast.makeText(context, getText(R.string.message_success_to_silk_file), Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(context, R.string.message_unsupported_operation, Toast.LENGTH_SHORT).show();
                 }
@@ -729,6 +732,7 @@ public class FileManagerActivity extends BaseActivity {
             case FILE_ACTION_TO_MP3:
                 if (!item.isBacker()) {
                     FileOperationsDialogs.showToMp3Dialog(context, item, () -> initFiles(currentFile));
+                    Toast.makeText(context, getText(R.string.message_success_to_mp3_file), Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(context, R.string.message_unsupported_operation, Toast.LENGTH_SHORT).show();
                 }

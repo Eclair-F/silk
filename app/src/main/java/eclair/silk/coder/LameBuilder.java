@@ -6,7 +6,6 @@ public class LameBuilder {
 
     public enum Mode {
         STEREO, JSTEREO, MONO, DEFAULT
-        //DUAL_CHANNEL not supported
     }
 
     public enum VbrMode {

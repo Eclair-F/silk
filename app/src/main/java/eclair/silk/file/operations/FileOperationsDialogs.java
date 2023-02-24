@@ -1015,7 +1015,6 @@ public class FileOperationsDialogs {
     public static void showToSilkDialog(Context context, AbstractFileItem file, Void onSucceed) {
         try {
             AudioUtils.mp3ToSilk(new File(file.getAbsolutePath()));
-            Toast.makeText(context, getText(R.string.message_success_to_silk_file), Toast.LENGTH_SHORT).show();
             onSucceed.execute();
         } catch (IOException e) {
             Toast.makeText(context, getText(R.string.message_failed_to_silk_file) + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -1025,7 +1024,6 @@ public class FileOperationsDialogs {
     public static void showToMp3Dialog(Context context, AbstractFileItem file, Void onSucceed) {
         try {
             AudioUtils.silkToMp3(new File(file.getAbsolutePath()));
-            Toast.makeText(context, getText(R.string.message_success_to_mp3_file), Toast.LENGTH_SHORT).show();
             onSucceed.execute();
         } catch (Exception e) {
             Toast.makeText(context, getText(R.string.message_failed_to_mp3_file) + e.getMessage(), Toast.LENGTH_SHORT).show();
